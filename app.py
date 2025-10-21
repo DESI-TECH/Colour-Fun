@@ -18,8 +18,15 @@ keyboard = [
 @app.post("/webhook")
 async def webhook(request: Request):
     data = await request.json()
-    chat_id = data.get("message", {}).get("chat", {}).get("id")
-    text = data.get("message", {}).get("text", "")
+    chat_id = None
+    text = None
+
+    if "message" in data:
+        chat_id = data["message"]["chat"]["id"]
+        text = data["message"].get("text")
+    elif "callback_query" in data:
+        chat_id = data["callback_query"]["message"]["chat"]["id"]
+        text = data["callback_query"]["data"]
 
     if chat_id and text == "/start":
         await bot.send_message(

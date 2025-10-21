@@ -1,11 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/*.py", "use": "@vercel/python" },
-    { "src": "game/**", "use": "@vercel/static" }
+    { "src": "api/main.py", "use": "@vercel/python" },
+    { "src": "game/index.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/webhook.py" },
-    { "src": "/game/(.*)", "dest": "/game/$1" }
+    { "src": "/game", "dest": "/api/main.py" },
+    { "src": "/(.*)", "dest": "/api/main.py" }
   ]
 }

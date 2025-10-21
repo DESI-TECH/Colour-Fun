@@ -1,57 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colour-Fun 🎨</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Colour-Fun Game</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<header>
-  <button id="howToPlay">📘 How to Play</button>
-  <h1>🎨 Colour-Fun</h1>
-  <button id="profile">👤 Profile</button>
-</header>
-
-<main>
-  <div class="balls-container">
-    <div class="balls-row">
-      <div class="ball red">0</div>
-      <div class="ball violet">1</div>
-      <div class="ball green">2</div>
-      <div class="ball red">3</div>
-      <div class="ball violet">4</div>
+    <div class="game-container">
+        <h1>Welcome to Colour-Fun!</h1>
+        <!-- Example game layout -->
+        <div class="balls">
+            <div class="ball red">1</div>
+            <div class="ball violet">2</div>
+            <div class="ball green">3</div>
+            <div class="ball red">4</div>
+            <div class="ball violet">5</div>
+        </div>
+        <button id="how-to-play">🛈 How to Play</button>
     </div>
-    <div class="balls-row">
-      <div class="ball green">5</div>
-      <div class="ball red">6</div>
-      <div class="ball violet">7</div>
-      <div class="ball green">8</div>
-      <div class="ball red">9</div>
-    </div>
-  </div>
-
-  <div class="bet-buttons">
-    <button class="bet-btn red">🔴 Red</button>
-    <button class="bet-btn violet">🟣 Violet</button>
-    <button class="bet-btn green">🟢 Green</button>
-  </div>
-
-  <div class="timer-period">
-    <div id="timer">Bet Open: 50s</div>
-    <div id="period">Period: 12345</div>
-  </div>
-
-  <div class="last-results">
-    <h3>Last 50 Results</h3>
-    <div id="results-container">
-      <!-- dynamically filled -->
-    </div>
-  </div>
-</main>
-
-<footer>
-  <p>💰 Balance: ₹1500 | DEMO MODE</p>
-</footer>
 </body>
 </html>

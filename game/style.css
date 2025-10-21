@@ -1,100 +1,42 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0b0b0b;
-  color: white;
-  width: 100%;
-  max-width: 480px;
-  margin: auto;
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.05);
+.game-container {
+    margin-top: 50px;
 }
 
-header h1 {
-  font-size: 20px;
-  text-align: center;
-  flex-grow: 1;
-}
-
-/* Balls */
-.balls-container {
-  margin: 15px 0;
-}
-
-.balls-row {
-  display: flex;
-  justify-content: space-around;
-  margin: 5px 0;
+.balls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 .ball {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 18px;
-  color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
 }
 
-.red { background-color: red; }
-.violet { background-color: violet; }
-.green { background-color: green; }
+.red { background-color: #ff3b3b; }
+.violet { background-color: #8a2be2; }
+.green { background-color: #00ff7f; }
 
-/* Bet buttons */
-.bet-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-}
-
-.bet-btn {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-/* Timer and period */
-.timer-period {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 10px;
-  font-size: 14px;
-}
-
-/* Last results */
-.last-results {
-  margin-top: 15px;
-  padding: 5px 10px;
-  font-size: 12px;
-}
-
-/* Footer */
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  text-align: center;
-  font-size: 14px;
+#how-to-play {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }

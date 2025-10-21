@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
+# Must be named exactly 'app'
 app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "FastAPI is running on Vercel!"}
+    return {"status": "ok", "message": "FastAPI works on Vercel!"}
 
 @app.get("/game", response_class=HTMLResponse)
 def game():

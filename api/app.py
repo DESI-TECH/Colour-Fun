@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "FastAPI works on Vercel!"}
+    return {"status": "ok", "message": "FastAPI is running on Vercel!"}
 
 @app.get("/game", response_class=HTMLResponse)
 def game():

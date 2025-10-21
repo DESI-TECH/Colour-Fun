@@ -1,0 +1,25 @@
+<script>
+  // Telegram Web App integration
+  // Telegram sends initData via window.Telegram.WebApp
+  const tg = window.Telegram ? window.Telegram.WebApp : null;
+  let tgUserId = null;
+  if (tg) {
+    tg.expand();
+    // Example: to get initDataUnsafe
+    const init = tg.initDataUnsafe || {};
+    // If you passed tg_user in query, use that as fallback
+    const params = Object.fromEntries(new URLSearchParams(window.location.search));
+    tgUserId = params.tg_user || (init.user && init.user.id);
+    // You can send messages to bot via fetch to /api/game_action
+  }
+
+  async function getProfile() {
+    if(!tgUserId) return;
+    const res = await fetch(`/api/game/profile?tg_id=${tgUserId}`);
+    const profile = await res.json();
+    // update UI: wallet, points, etc
+  }
+
+  // call getProfile on load
+  window.addEventListener('load', getProfile);
+</script>

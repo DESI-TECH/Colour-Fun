@@ -9,3 +9,6 @@ pydantic==1.10.11
 python-dotenv==1.0.0
 qrcode==7.4.2
 Pillow==10.1.0
+fastapi
+python-telegram-bot==20.3
+uvicorn

@@ -1,25 +1,34 @@
-<script>
-  // Telegram Web App integration
-  // Telegram sends initData via window.Telegram.WebApp
-  const tg = window.Telegram ? window.Telegram.WebApp : null;
-  let tgUserId = null;
-  if (tg) {
-    tg.expand();
-    // Example: to get initDataUnsafe
-    const init = tg.initDataUnsafe || {};
-    // If you passed tg_user in query, use that as fallback
-    const params = Object.fromEntries(new URLSearchParams(window.location.search));
-    tgUserId = params.tg_user || (init.user && init.user.id);
-    // You can send messages to bot via fetch to /api/game_action
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colour Fun 🎨</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <button id="howToPlay">📘 How to Play</button>
+    <h1>🎨 Colour-Fun Game</h1>
+    <button id="profile">👤 Profile</button>
+  </header>
 
-  async function getProfile() {
-    if(!tgUserId) return;
-    const res = await fetch(`/api/game/profile?tg_id=${tgUserId}`);
-    const profile = await res.json();
-    // update UI: wallet, points, etc
-  }
+  <main>
+    <div class="balls">
+      <div class="ball red">0</div>
+      <div class="ball violet">5</div>
+      <div class="ball green">8</div>
+    </div>
 
-  // call getProfile on load
-  window.addEventListener('load', getProfile);
-</script>
+    <div class="buttons">
+      <button class="bet-btn red">🔴 Red</button>
+      <button class="bet-btn violet">🟣 Violet</button>
+      <button class="bet-btn green">🟢 Green</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>💰 Balance: ₹1500 | DEMO MODE</p>
+  </footer>
+</body>
+</html>
